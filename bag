@@ -1,0 +1,6 @@
+#!/usr/bin/env bb
+
+(ns bag.launcher
+  (:require [babagent.core :as core]))
+
+(apply core/-main *command-line-args*)

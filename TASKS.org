@@ -1,0 +1,18 @@
+#+TITLE: babagent Tasks
+#+STARTUP: overview
+
+* TODO Implement external extension host protocol :feat:
+
+Now that CLJS is wired correctly for browser-injected code, the logical next
+step toward the hybrid plan is long-lived external extension hosts rather than
+per-call process spawn.
+
+Right now =register-external-tool!= spawns a subprocess on every tool call and
+reads/writes JSON once. For real extensions (e.g. a CLJS-authored extension
+process), we want:
+
+- Start the host process once
+- Keep stdin/stdout open
+- Exchange JSON-RPC style messages (=register=, =call=, =response=, =shutdown=)
+- Host declares its tools on startup; babagent registers them with proper
+  handler fns that proxy over the connection

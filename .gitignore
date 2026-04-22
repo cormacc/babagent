@@ -1,0 +1,8 @@
+.lsp/
+.clj-kondo/
+.cpcache/
+.agents/
+node_modules/
+.shadow-cljs/
+.codex
+resources/public/js/

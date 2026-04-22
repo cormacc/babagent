@@ -1,0 +1,17 @@
+{:source-paths ["src"]
+ :dependencies [[no.cjohansen/replicant "2025.12.1"]
+                [no.cjohansen/nexus "2025.11.1"]]
+ :builds
+ {:chromium-pick
+  {:target :browser
+   :output-dir "resources/public/js"
+   :asset-path "/js"
+   :modules {:chromium-pick {:init-fn babagent.ext.chromium-pick/install!}}
+   :compiler-options {:optimizations :simple}}
+
+  :web-ui
+  {:target :browser
+   :output-dir "resources/public/js"
+   :asset-path "/js"
+   :modules {:web-ui {:init-fn babagent.ui.web.core/init!}}
+   :devtools {:after-load babagent.ui.web.core/init!}}}}

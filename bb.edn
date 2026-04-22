@@ -1,0 +1,9 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.1"}
+        de.timokramer/charm.clj {:mvn/version "0.2.71"}
+        cheshire/cheshire {:mvn/version "5.13.0"}
+        http-kit/http-kit {:mvn/version "2.8.0"}
+        no.cjohansen/nexus {:mvn/version "2025.11.1"}}
+ :tasks {web {:doc "Start web UI server on localhost:6767"
+              :requires ([babagent.web])
+              :task (babagent.web/-main)}}}

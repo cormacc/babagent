@@ -1,0 +1,14 @@
+{
+  "name": "babagent-cljs",
+  "private": true,
+  "description": "CLJS build pipeline for babagent browser-injected helpers",
+  "scripts": {
+    "build:pick": "shadow-cljs release chromium-pick",
+    "watch:pick": "shadow-cljs watch chromium-pick",
+    "build:web-ui": "shadow-cljs release web-ui",
+    "watch:web-ui": "shadow-cljs watch web-ui"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.28.20"
+  }
+}
